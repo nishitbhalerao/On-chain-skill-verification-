@@ -1,0 +1,27 @@
+{
+  "name": "openskills-oracle-backend",
+  "version": "1.0.0",
+  "description": "Backend API for OpenSkills Oracle",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "crypto-js": "^4.2.0",
+    "axios": "^1.6.0",
+    "@stellar/stellar-sdk": "^11.3.0",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
