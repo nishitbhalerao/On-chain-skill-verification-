@@ -13,9 +13,9 @@ router.get('/:walletAddress', async (req, res) => {
   try {
     const { walletAddress } = req.params
 
-    // Validate wallet address format
-    if (!walletAddress || walletAddress.length < 10) {
-      return res.status(400).json({ error: 'Invalid wallet address' })
+    // Validate wallet address format - Stellar addresses start with G and are 56 chars
+    if (!walletAddress || !/^G[A-Z2-7]{55}$/.test(walletAddress)) {
+      return res.status(400).json({ error: 'Invalid Stellar wallet address format' })
     }
 
     let profile = await Profile.findOne({ wallet: walletAddress })

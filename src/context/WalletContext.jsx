@@ -110,7 +110,7 @@ export function WalletProvider({ children }) {
 
   const getPublicKey = async () => {
     try {
-      return await freighter.getPublicKey()
+      return await freighterAPI.getPublicKey()
     } catch (error) {
       console.error('Failed to get public key:', error)
       return null
