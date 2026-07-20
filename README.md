@@ -8,9 +8,9 @@ OpenSkills Oracle transforms real developer achievements into a non-transferable
 
 ## 🚀 Live Application
 
-**[View Live App](https://openskills-oracle-nishitbhalerao-7784.vercel.app)** - Deployed on Vercel
+**[View Live App](https://openskills-frontend-q8dv50dl6-nishitbhalerao-7784s-projects.vercel.app)** - Deployed on Vercel
 
-Try the live demo: https://openskills-oracle-nishitbhalerao-7784.vercel.app
+Try the live demo: https://openskills-frontend-q8dv50dl6-nishitbhalerao-7784s-projects.vercel.app
 
 ## 📜 Smart Contract
 
