@@ -16,7 +16,17 @@ Try the live demo: https://openskills-frontend-q8dv50dl6-nishitbhalerao-7784s-pr
 
 **Network**: Stellar Testnet  
 **Contract Language**: Rust (Soroban)  
-**Status**: ✅ Deployed  
+**Status**: ✅ Deployed on Testnet  
+
+### Deployment Details
+
+| Property | Value |
+|----------|-------|
+| **Contract Address** | `CDRDOQLK7BHE2SCWRVNPVJ5OMMTM7RYZP6OKI77JWFQDDP7NWL5GHS2D` |
+| **Network** | `Stellar Testnet` |
+| **Explorer** | [Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDRDOQLK7BHE2SCWRVNPVJ5OMMTM7RYZP6OKI77JWFQDDP7NWL5GHS2D) |
+| **Deployment Date** | July 20, 2026 |
+| **Admin Account** | `GBRPYHIL2CI3WHZDTOOQFC6EB4KJJGUJWVVF4LTGZCVYK5JSXNL63A3` |
 
 ### Contract Functions
 - `initialize(admin)` - Initialize contract with admin
@@ -27,7 +37,20 @@ Try the live demo: https://openskills-frontend-q8dv50dl6-nishitbhalerao-7784s-pr
 - `update_score(wallet, category, new_score)` - Update category score
 - `verify_profile(wallet)` - Mark profile as verified
 
-### To Deploy the Contract
+### Query the Contract
+
+To check a wallet's skill profile on the blockchain:
+
+```bash
+stellar contract invoke \
+  --id CDRDOQLK7BHE2SCWRVNPVJ5OMMTM7RYZP6OKI77JWFQDDP7NWL5GHS2D \
+  --source viewer \
+  --network testnet \
+  -- get_score \
+  --wallet <WALLET_ADDRESS>
+```
+
+### To Deploy Your Own Contract
 
 1. **Build the contract**:
 ```bash
@@ -46,7 +69,7 @@ stellar contract deploy \
 3. **Initialize**:
 ```bash
 stellar contract invoke \
-  --id <CONTRACT_ID> \
+  --id <YOUR_CONTRACT_ID> \
   --source oracle-admin \
   --network testnet \
   -- initialize \
