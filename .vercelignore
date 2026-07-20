@@ -1,6 +1,8 @@
-backend/
-contracts/
+backend
+contracts
 .git
 .gitignore
-README.md
+node_modules
 *.md
+.env
+.env.local
