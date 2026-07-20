@@ -1,0 +1,6 @@
+backend/
+contracts/
+.git
+.gitignore
+README.md
+*.md
