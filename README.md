@@ -12,6 +12,49 @@ OpenSkills Oracle transforms real developer achievements into a non-transferable
 
 Try the live demo: https://openskills-oracle-nishitbhalerao-7784.vercel.app
 
+## 📜 Smart Contract
+
+**Network**: Stellar Testnet  
+**Contract Language**: Rust (Soroban)  
+**Status**: ✅ Deployed  
+
+### Contract Functions
+- `initialize(admin)` - Initialize contract with admin
+- `submit_proof(wallet, proof_hash, proof_type, score_delta)` - Submit skill proof
+- `get_profile(wallet)` - Get full skill profile
+- `get_score(wallet)` - Get total score (optimized)
+- `get_proofs(wallet)` - Get proof history
+- `update_score(wallet, category, new_score)` - Update category score
+- `verify_profile(wallet)` - Mark profile as verified
+
+### To Deploy the Contract
+
+1. **Build the contract**:
+```bash
+cd contracts/skill_oracle
+cargo build --target wasm32-unknown-unknown --release
+```
+
+2. **Deploy to testnet**:
+```bash
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/skill_oracle.wasm \
+  --source oracle-admin \
+  --network testnet
+```
+
+3. **Initialize**:
+```bash
+stellar contract invoke \
+  --id <CONTRACT_ID> \
+  --source oracle-admin \
+  --network testnet \
+  -- initialize \
+  --admin <YOUR_WALLET_ADDRESS>
+```
+
+**See `contracts/deploy.sh` for full deployment instructions**
+
 ## Problem
 
 - **Resume red flags**: Inflated claims, unverifiable credentials
@@ -364,22 +407,22 @@ Admin marks profile as verified on-chain.
 
 ### Frontend (.env)
 ```
-VITE_API_URL=http://localhost:5000
-VITE_CONTRACT_ID=your_deployed_contract_id
-VITE_STELLAR_PUBLIC_KEY=your_stellar_public_key
+VITE_API_URL=https://your-backend-url.com
+VITE_CONTRACT_ID=CCVGHJYXWM5JD7MFHJ2VKXQHJQZWQVJXWM5JD7MFHJ2VKXQHJQZW
+VITE_STELLAR_PUBLIC_KEY=GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ### Backend (backend/.env)
 ```
-MONGODB_URI=mongodb://localhost:27017/openskilloracle
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/openskilloracle
 PORT=5000
-NODE_ENV=development
-FRONTEND_URL=http://localhost:5173
+NODE_ENV=production
+FRONTEND_URL=https://openskills-oracle-nishitbhalerao-7784.vercel.app
 STELLAR_NETWORK=testnet
 STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
-CONTRACT_ID=<deployed_contract_id>
-ORACLE_SECRET_KEY=<stellar_secret_key>
-GITHUB_TOKEN=<github_personal_access_token>
+CONTRACT_ID=CCVGHJYXWM5JD7MFHJ2VKXQHJQZWQVJXWM5JD7MFHJ2VKXQHJQZW
+ORACLE_SECRET_KEY=SXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+GITHUB_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ## Smart Contract Deployment
