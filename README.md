@@ -6,6 +6,12 @@ Skills you can't fake. Verified on-chain.
 
 OpenSkills Oracle transforms real developer achievements into a non-transferable skill NFT verified on the Stellar blockchain. Employers verify by querying the contract with a wallet address.
 
+## 🚀 Live Application
+
+**[View Live App](https://openskills-oracle-nishitbhalerao-7784.vercel.app)** - Deployed on Vercel
+
+Try the live demo: https://openskills-oracle-nishitbhalerao-7784.vercel.app
+
 ## Problem
 
 - **Resume red flags**: Inflated claims, unverifiable credentials
