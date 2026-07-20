@@ -6,6 +6,7 @@
     "VITE_API_URL": "@api_url",
     "VITE_STELLAR_NETWORK": "TESTNET_NETWORK_PASSPHRASE"
   },
+  "version": 1,
   "rewrites": [
     {
       "source": "/(.*)",
